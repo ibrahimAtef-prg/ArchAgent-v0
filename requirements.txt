@@ -1,0 +1,22 @@
+# ArchAgent — Python Dependencies
+# Install with: pip install -r requirements.txt
+
+# ── HTTP & Async ───────────────────────────────────────────────────────────────
+aiohttp==3.9.5                  # Async HTTP client — used by llm/client.py to talk to Ollama
+
+# ── API Server ─────────────────────────────────────────────────────────────────
+fastapi==0.111.0                # REST API framework — used by api/server.py + api/routes.py
+uvicorn[standard]==0.29.0       # ASGI server to run FastAPI
+python-multipart==0.0.9         # Required by FastAPI for form data support
+
+# ── Data Validation ────────────────────────────────────────────────────────────
+pydantic==2.7.1                 # Request/response models — used by api/models.py
+
+# ── CLI ────────────────────────────────────────────────────────────────────────
+typer==0.12.3                   # CLI argument parsing — used by cli/main.py
+rich==13.7.1                    # Terminal colors, progress, pretty output
+
+# ── Testing ────────────────────────────────────────────────────────────────────
+pytest==8.2.0                   # Test runner
+pytest-asyncio==0.23.6          # Async test support (needed for async pipeline tests)
+pytest-cov==5.0.0               # Coverage reports
